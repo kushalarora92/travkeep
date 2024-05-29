@@ -1,3 +1,8 @@
 1. Create a docker mysql database container
-    ``` make run-local-db ```
-2. 
+   `make run-local-db`
+2. Alter user privileges using db client of preference
+   `ALTER USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'admin';`
+3. Configure strapi app
+   `apps/strapi/.env`
+4. Run strapi app
+   `cd apps/strapi && yarn develop`
