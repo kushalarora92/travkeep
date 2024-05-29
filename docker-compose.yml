@@ -1,0 +1,16 @@
+version: "2"
+services:
+  db:
+    container_name: strapi_db
+    image: mysql:8
+    restart: always
+    volumes:
+      - ./database/mysql.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/data:/var/lib/mysql
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: strapi
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
